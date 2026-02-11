@@ -1,8 +1,11 @@
-#list
+#pyton list
 
 #pyton list
 thislist = ["apple", "banana", "cherry"]
 print(thislist)
+print(thislist[1:3])
+print(thislist[-3:-1])
+print(thislist[:2])
 print(type(thislist))
 
 #change list item
