@@ -1,4 +1,4 @@
-#pyton tuples
+#python tuples
 
 #access tuple items
 thistuple = ("apple", "banana", "cherry")
