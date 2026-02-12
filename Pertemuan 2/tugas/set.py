@@ -1,4 +1,4 @@
-#pyton set
+#python set
 
 #access set items
 thisset = {"apple", "banana", "cherry"}

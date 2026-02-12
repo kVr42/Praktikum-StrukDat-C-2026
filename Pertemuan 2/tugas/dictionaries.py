@@ -1,4 +1,4 @@
-#pyton dictionaries
+#python dictionaries
 
 #access dictionary items
 thisdict = {"brand": "Ford", "model": "Mustang", "year": 1964}

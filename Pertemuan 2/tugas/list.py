@@ -1,6 +1,4 @@
-#pyton list
-
-#pyton list
+#python list
 thislist = ["apple", "banana", "cherry"]
 print(thislist)
 print(thislist[1:3])
