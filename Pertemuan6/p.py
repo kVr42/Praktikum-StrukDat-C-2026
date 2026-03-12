@@ -82,6 +82,7 @@ print(f"Nominal Komisi: {nominal_komisi}")
 
 
 #5
+'''
 import Soal1, Soal2, Soal3, Soal4
 
 while True:
@@ -107,3 +108,4 @@ while True:
         break
     else:
         print("Pilihan tidak valid. Silakan pilih menu yang tersedia.")
+'''
