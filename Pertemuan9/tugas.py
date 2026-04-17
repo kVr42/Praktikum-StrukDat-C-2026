@@ -121,12 +121,3 @@ cll.tambah_petugas("Edan")
 cll.tambah_petugas("Ingot")
 
 cll.giliran_berikutnya(6)
-
-# Petugas nganggur
-
-def petugas_nganggur(cll, n):
-    temp = cll.head
-    for i in range(n):
-        print(f"Giliran {i+1}: {temp.nama}")
-        temp = temp.next
-    print(f"Petugas nganggur: {temp.nama}")
