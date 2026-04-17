@@ -35,9 +35,9 @@ class Queue:
 # Simulasi penggunaan
 q = Queue()
 
-q.enqueue("Andi")
-q.enqueue("Budi")
-q.enqueue("Citra")
+q.enqueue("Alek")
+q.enqueue("Dinda")
+q.enqueue("Edan")
 
 print("Isi Queue:", q.display())
 print("Dilayani:", q.dequeue())

@@ -1,0 +1,138 @@
+#soal 3
+class Pengunjung:
+    def __init__(self, id, nama, kategori):
+        self.__id = id
+        self.__nama = nama
+        self.__kategori = kategori
+
+    def get_id(self):
+        return self.__id
+
+    def get_nama(self):
+        return self.__nama
+
+    def get_kategori(self):
+        return self.__kategori
+
+    def tampilkan_info(self):
+        print(f"ID : {self.__id}")
+        print(f"Nama : {self.__nama}")
+        print(f"Kategori : {self.__kategori}")
+
+    @staticmethod
+    def hitung_pengunjung():
+        return Pengunjung._hitung_pengunjung
+Pengunjung._hitung_pengunjung = 0
+
+class PengunjungPrioritas(Pengunjung):
+    def __init__(self, id, nama, kategori, prioritas):
+        super().__init__(id, nama, kategori)
+        self.prioritas = prioritas
+        Pengunjung._hitung_pengunjung += 1
+
+    def tampilkan_info(self):
+        super().tampilkan_info()
+        print(f"Prioritas : {self.prioritas}")
+        if self.prioritas == "Mendesak":
+            print("** Layani segera! **")
+# Contoh penggunaan
+pengunjung1 = Pengunjung("M001", "Rina", "Fiksi")
+pengunjung2 = PengunjungPrioritas("M007", "Gilang", "Referensi", "Mendesak")
+
+pengunjung1.tampilkan_info()
+pengunjung2.tampilkan_info()
+print(f"Total pengunjung terdaftar: {Pengunjung.hitung_pengunjung()}")
+
+
+
+
+
+
+#soal 4
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class AntrianPeminjaman:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def tambah(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node
+            self.tail = new_node
+
+    def tampilkan(self):
+        print("===== ANTRIAN PEMINJAMAN =====")
+        current = self.head
+        position = 1
+        while current:
+            print(f"[{position}] {current.data['id']} - {current.data['nama']} | {current.data['kategori']}")
+            current = current.next
+            position += 1
+        print(f"Total antrian: {self.hitung()}")
+    def panggil_berikutnya(self):
+        if self.head is None:
+            print("Antrian kosong.")
+            return
+        print("Memanggil pengunjung berikutnya...")
+        print(f"Silakan masuk: {self.head.data['nama']} ({self.head.data['id']}) - {self.head.data['kategori']}")
+        self.head = self.head.next
+        if self.head is None:
+            self.tail = None
+    def cari(self, nama):
+        current = self.head
+        position = 1
+        while current:
+            if current.data['nama'] == nama:
+                print(f"Ditemukan: {current.data['id']} - {current.data['nama']} | {current.data['kategori']} (posisi ke-{position})")
+                return
+            current = current.next
+            position += 1
+        print(f"{nama} tidak ditemukan dalam antrian.")
+    def hapus_berdasarkan_id(self, id):
+        current = self.head
+        previous = None
+        while current:
+            if current.data['id'] == id:
+                print(f"Menghapus pengunjung dengan ID {id}...")
+                print(f"{current.data['nama']} ({current.data['id']}) berhasil dihapus dari antrian.")
+                if previous is None:  # Menghapus head
+                    self.head = current.next
+                    if self.head is None:
+                        self.tail = None
+                else:  # Menghapus di tengah atau akhir
+                    previous.next = current.next
+                    if previous.next is None:
+                        self.tail = previous
+                return
+            previous = current
+            current = current.next
+        print(f"ID {id} tidak ditemukan dalam antrian.")
+    def hitung(self):
+        count = 0
+        current = self.head
+        while current:
+            count += 1
+            current = current.next
+        return count
+# Contoh penggunaan
+antrian = AntrianPeminjaman()
+
+antrian.tambah({"id": "M001", "nama": "Rina", "kategori": "Fiksi"})
+antrian.tambah({"id": "M002", "nama": "Hendra", "kategori": "Sains"})
+antrian.tambah({"id": "M003", "nama": "Siti", "kategori": "Fiksi"})
+antrian.tambah({"id": "M004", "nama": "Taufik", "kategori": "Hukum"})
+
+antrian.tampilkan()
+antrian.panggil_berikutnya()
+antrian.tampilkan()
+antrian.cari("Siti")
+antrian.hapus_berdasarkan_id("M003")
+antrian.tampilkan()
