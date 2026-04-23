@@ -34,17 +34,15 @@ class stacklinkedlist:
     def size(self):
         return self.count
 
-'''
-Setiap kali pengguna mengunjungi halaman web baru, URL halaman tersebut akan ditumpuk.
-Jika pengguna menekan tombol "Back", halaman terakhir akan dihapus dari riwayat dan pengguna kembali ke halaman sebelumnya.
-Sistem ini sangat cocok menggunakan struktur data Stack (LIFO - Last In First Out).
-'''
-
 # Contoh penggunaan
-stack = stacklinkedlist()
-stack.push("https://www.example.com")
-stack.push("https://www.google.com")
-stack.push("https://www.youtube.com")
-print(stack.pop())  # Output: https://www.youtube.com
-print(stack.peek())  # Output: https://www.google.com
-print(stack.size())  # Output: 2
+if __name__ == "__main__":
+    browser_history = stacklinkedlist()
+    browser_history.push("https://www.google.com")
+    browser_history.push("https://www.facebook.com")
+    browser_history.push("https://www.youtube.com")
+
+    print("Halaman saat ini:", browser_history.peek())
+    print("Ukuran riwayat:", browser_history.size())
+    
+    print("Kembali ke halaman sebelumnya:", browser_history.pop())
+    print("Halaman saat ini setelah kembali:", browser_history.peek())

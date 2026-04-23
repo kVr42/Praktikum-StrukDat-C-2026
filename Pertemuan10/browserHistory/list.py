@@ -21,3 +21,20 @@ class StackList2:
 
     def size(self):
         return len(self.stack)
+
+#input url
+url = input("Masukkan URL: ")
+
+# Contoh penggunaan
+if __name__ == "__main__":
+    browser_history = StackList2()
+    browser_history.push("https://www.google.com")
+    browser_history.push("https://www.facebook.com")
+    browser_history.push("https://www.youtube.com")
+    browser_history.push(url)
+
+    print("Halaman saat ini:", browser_history.peek())
+    print("Ukuran riwayat:", browser_history.size())
+    
+    print("Kembali ke halaman sebelumnya:", browser_history.pop())
+    print("Halaman saat ini setelah kembali:", browser_history.peek())

@@ -21,3 +21,16 @@ class StackList:
 
       def size(self):
         return len(self.items)
+
+# Contoh penggunaan
+if __name__ == "__main__":
+    browser_history = StackList()
+    browser_history.push("https://www.google.com")
+    browser_history.push("https://www.facebook.com")
+    browser_history.push("https://www.youtube.com")
+
+    print("Halaman saat ini:", browser_history.peek())
+    print("Ukuran riwayat:", browser_history.size())
+    
+    print("Kembali ke halaman sebelumnya:", browser_history.pop())
+    print("Halaman saat ini setelah kembali:", browser_history.peek())
