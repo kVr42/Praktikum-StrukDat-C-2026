@@ -80,40 +80,30 @@ print(" SISTEM ANTRIAN POLI UMUM")
 print(" RS Sehat Bersama")
 print("====================================\n")
 
-# 1
 print("[CEK] Apakah antrian kosong?")
 print("→ YA, antrian masih kosong.\n" if antrian.isEmpty() else "→ TIDAK kosong\n")
 
-# 2-4
 antrian.enqueue("Budi", "demam tinggi")
 antrian.enqueue("Ani", "batuk pilek")
 antrian.enqueue("Citra", "sakit kepala")
 
-# 5
 print(f"\n[INFO] Jumlah pasien menunggu: {antrian.size()} orang\n")
 
-# 6
 antrian.peek()
 
-# 7
 antrian.dequeue()
 
-# 8
 antrian.enqueue("Dodi", "nyeri perut")
 
-# 9
 antrian.display()
 
-# 10
 antrian.dequeue()
 
-# 11
 print(f"\n[INFO] Jumlah pasien masih menunggu: {antrian.size()} orang\n")
 
-# 12
 antrian.clear()
 
-# 13
+
 print("\n[CEK] Apakah antrian kosong?")
 print("→ YA, antrian sudah kosong." if antrian.isEmpty() else "→ TIDAK kosong")
 
