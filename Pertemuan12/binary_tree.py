@@ -37,7 +37,6 @@ class BinaryTree:
             self.get_leaf_nodes(node.right, leaf_nodes)
 
 
-
 if __name__ == "__main__":
     print("SISTEM AUDIT DISTRIBUSI \"CEPAT SAMPAI\"")
     print("======================================")
