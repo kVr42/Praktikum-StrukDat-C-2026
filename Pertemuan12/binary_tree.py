@@ -1,60 +1,3 @@
-'''
-Cerita Latar Belakang
-Sebuah perusahaan logistik bernama "Cepat Sampai" menggunakan sistem kode lokasi gudang
-yang berbentuk pohon biner. Setiap gudang (Node) dapat memiliki maksimal dua cabang jalur
-distribusi (Left Child dan Right Child).
-Manajer operasional perlu melakukan audit rutin untuk memastikan semua gudang terkunjungi.
-Ada tiga metode audit yang digunakan:
-  1. Audit Prioritas (Pre-Order): Mengecek gudang utama sebelum cabang-cabangnya.
-  2. Audit Berurutan (In-Order): Mengecek dari jalur kiri, lalu pusat, baru ke kanan.
-  3. Audit Akhir (Post-Order): Mengecek semua cabang terlebih dahulu sebelum kembali ke gudang pusat.
-
-
-Tugas
-Buatlah program Python untuk membangun struktur Binary Tree secara manual dan melakukan
-ketiga jenis traversal tersebut.
-Operasi yang Wajib Diimplementasikan:
-  1. insert_manual(): Membangun pohon sesuai struktur yang ditentukan di skenario.
-  2. traverse_preorder(): Menampilkan urutan gudang dengan metode Pre-Order.
-  3. traverse_inorder(): Menampilkan urutan gudang dengan metode In-Order.
-  4. traverse_postorder(): Menampilkan urutan gudang dengan metode Post-Order.
-  5. get_leaf_nodes(): Menampilkan daftar gudang yang merupakan Leaf Node (gudang ujung yang tidak punya cabang lagi).
-
-
-Skenario Pengujian
-Bangunlah struktur pohon berikut di dalam programmu:
-  • A adalah Root.
-  • A memiliki anak kiri B dan anak kanan C.
-  • B memiliki anak kiri D dan anak kanan E.
-  • C memiliki anak kanan F (anak kiri kosong).
-Setelah pohon terbentuk, tampilkan:
-  1. Hasil penelusuran Pre-Order.
-  2. Hasil penelusuran In-Order.
-  3. Hasil penelusuran Post-Order.
-
-
-
-Contoh Output yang Diharapkan:
-
-SISTEM AUDIT DISTRIBUSI "CEPAT SAMPAI"
-======================================
-[INFO] Membangun Struktur Gudang...
-[INFO] Struktur berhasil dibuat.
-
-HASIL AUDIT:
-1. Pre-Order : A - B - D - E - C - F
-2. In-Order : D - B - E - A - C - F
-3. Post-Order : D - E - B - F - C - A
-
-[DATA] Gudang Ujung (Leaf Nodes): D, E, F
-======================================
-Audit Selesai!
-
-Aturan Penting
-  • DILARANG menggunakan modul collections.deque atau queue.
-  • Struktur harus dibangun menggunakan class Node dengan atribut data, left, dan right.
-'''
-
 class Node:
     def __init__(self, data):
         self.data = data
@@ -92,6 +35,7 @@ class BinaryTree:
                 leaf_nodes.append(node.data)
             self.get_leaf_nodes(node.left, leaf_nodes)
             self.get_leaf_nodes(node.right, leaf_nodes)
+
 
 
 if __name__ == "__main__":
